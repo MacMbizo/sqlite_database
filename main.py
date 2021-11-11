@@ -1,3 +1,4 @@
+from os import name
 import sqlite3
 from sqlite3.dbapi2 import Cursor
 import sys
@@ -26,4 +27,16 @@ def insert_db():
         skills = input("Skills >>")
 
         if name !="" and age != "" and skills != "":
-            cursor.execute(f"INSER INTO EOLE")
+            cursor.execute(f"INSER INTO people VALUES ('{name}', '{age}', '{skills}')")
+            connection.commit()
+            print(name + " has been added to the database!")
+
+        else:
+            print("One of the fields are empty!")
+            insert_db()
+    else:
+        print("Name is already in the database!")
+
+def edit_db():
+    name = input("Type name of the person you would like to edit")
+    
