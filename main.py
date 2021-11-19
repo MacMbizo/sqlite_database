@@ -59,4 +59,10 @@ def get_user_info_db():
 
     print (f"{name} is {age} years old, and works as a {skills}.")
 
-
+def delete_db():
+    name = input ("Type the name of the person that you would like ro delete >>")
+    if name != "":
+        cursor.execute("DELETE FROM people WHERE name = ?", (name))
+        connection.commit()
+        print("User successfully deleted!")
+        
