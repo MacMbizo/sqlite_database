@@ -38,12 +38,12 @@ def insert_db():
         print("Name is already in the database!")
 
 def edit_db():
-    name = input("Type name of the person you would like to edit")
+    name = input("Type name of the person you would like to edit >>")
     field = input("Which field would you like to edit: name, age, or skills? >>")
     updated_field = input ("What would you like to update it to? >>")
 
     try:
-        cursor.execute(f"UPDATED people SET {field} = ? WHERE name = ?", (updated_field, name))
+        cursor.execute(f"UPDATE people SET {field} = ? WHERE name = ?", (updated_field, name))
         connection.commit()
         print("Successfully updated user!")
     except Exception as e:
