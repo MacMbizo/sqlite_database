@@ -12,7 +12,7 @@ except Exception as e:
     pass
 
 def user_is_unique(name):
-    rows = cursor.execute("SELECT name, age, skills FROM pepole").fetchall()
+    rows = cursor.execute("SELECT name, age, skills FROM people").fetchall()
 
     for user in rows:
         if user[0] == name:
@@ -83,7 +83,7 @@ def select_options():
     ----------------------
     Type '0' to exit
     Type '1' to insert a new user
-    Type '2' to display usser
+    Type '2' to display user
     Type '3' to delete user
     Type '4' to edit user
     Type '5' to get user information
