@@ -72,4 +72,39 @@ def display_db():
     print("Users: ")
     for user in rows:
         print(f"- {user[0]} - {user[1]} - {user[2]}")
-        
+
+def exit_db():
+    cursor.close()
+    connection.close()
+    sys.exit()
+
+def select_options():
+    options = input("""
+    ----------------------
+    Type '0' to exit
+    Type '1' to insert a new user
+    Type '2' to display usser
+    Type '3' to delete user
+    Type '4' to edit user
+    Type '5' to get user information
+    ----------------------
+    >> """)
+
+    if options == "0":
+        exit_db()
+    if options == "1":
+        insert_db()
+    if options == "2":
+        display_db()
+    if options == "3":
+        delete_db()
+    if options == "4":
+        edit_db()
+    if options == "5":
+        get_user_info_db()
+    
+# Infinite loop
+while True:
+    select_options()
+
+    
