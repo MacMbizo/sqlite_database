@@ -7,7 +7,7 @@ connection = sqlite3.connect("people.db")
 cursor = connection.cursor()
 
 try:
-    cursor.execute("CREATE TABLE people (name TETX, age INTEGER, skills STRING)")
+    cursor.execute("CREATE TABLE people (name TEXT, age INTEGER, skills STRING)")
 except Exception as e:
     pass
 
@@ -107,4 +107,3 @@ def select_options():
 while True:
     select_options()
 
-    
